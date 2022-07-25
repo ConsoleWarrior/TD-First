@@ -126,10 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   options:
   - color: {r: 0, g: 0, b: 0, a: 0.5019608}
-    sprite: {fileID: 21300000, guid: 6ff218c5d7877c64ab14f444c2119d0d, type: 3}
-    title: Turret
-  - color: {r: 0, g: 0, b: 0, a: 0.5019608}
-    sprite: {fileID: 21300000, guid: 18ef47eb6bd82854ebe9e763ee8ad06b, type: 3}
-    title: Stazis
+    sprite: {fileID: 21300000, guid: 81fe56d6e9a8a8a40944e46c44cb5ee7, type: 3}
+    title: BitcoinMine
   empty: 1
   turel: {fileID: 0}

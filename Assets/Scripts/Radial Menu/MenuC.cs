@@ -46,8 +46,10 @@ public class MenuC : MonoBehaviour
                         if (field.turel) { field.empty = false; break; } else break;
                 case "Stazis": field.turel = CreateTurret.SozdatStazis(Interactable.field);
                         if (field.turel) { field.empty = false; break; } else break;
-                        
+                case "BitcoinMine": field.turel = CreateTurret.SozdatBitcoinMine(Interactable.field); 
+                        if (field.turel) { field.empty = false; break; } else break;      
                 case "Destroy": Destroy (field.turel); field.empty = true; break;
+                
             }
             }
             Destroy (gameObject);

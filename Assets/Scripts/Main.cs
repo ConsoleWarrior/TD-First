@@ -12,10 +12,11 @@ public class Main : MonoBehaviour
     [SerializeField] Text bitcoin;
     public static float kredit = 200;
 
-    IEnumerator Creator(float delay){
+    IEnumerator Creator(){
         while(true){
+            
             Instantiate(Resources.Load("Enemy", typeof(Enemy)), new Vector2(UnityEngine.Random.Range(-10,-20), UnityEngine.Random.Range(-10,10)), Quaternion.identity);
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.1f,4f));// рандомный спавн
         }
     }
     
@@ -23,7 +24,7 @@ public class Main : MonoBehaviour
     void Start()
     {
         //Instantiate(Resources.Load("Tower", typeof(Tower)), new Vector2(0,0), Quaternion.identity);
-        corot = Creator(delay);
+        corot = Creator();
         StartCoroutine(corot);
 
     }
@@ -31,7 +32,7 @@ public class Main : MonoBehaviour
 
     void Update()
     {
-        kredit += Time.deltaTime * 1f; 
+        kredit += Time.deltaTime * 1f; //прирост битков
         int a = (int)Math.Round(kredit);
         bitcoin.text = a.ToString();
         
