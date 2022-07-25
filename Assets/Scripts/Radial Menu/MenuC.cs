@@ -42,8 +42,11 @@ public class MenuC : MonoBehaviour
             if(selected) {Debug.Log($"selected{selected.title}");//ЗДЕСЬ НАЗНАЧЕНИЕ БАТТОНА
             switch (selected.title)
             {
-                case "Turret": field.turel = CreateTurret.SozdatTurret(Interactable.field); field.empty = false; break;
-                case "Stazis": field.turel = CreateTurret.SozdatStazis(Interactable.field); field.empty = false; break;
+                case "Turret": field.turel = CreateTurret.SozdatTurret(Interactable.field);
+                        if (field.turel) { field.empty = false; break; } else break;
+                case "Stazis": field.turel = CreateTurret.SozdatStazis(Interactable.field);
+                        if (field.turel) { field.empty = false; break; } else break;
+                        
                 case "Destroy": Destroy (field.turel); field.empty = true; break;
             }
             }
