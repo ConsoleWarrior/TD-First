@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //public Transform target; //цель
+    public Transform target; //цель
     public float hp = 200;
     public int dmg = 10;
     public float attackspeed = 3f;
     private IEnumerator corot;
-    private Transform waypoints;
+    /*private Transform waypoints;
     private Transform waypoint;
     private Transform waypoints1;
     private Transform waypoints2;
-    private int waypointIndex = -1;
+    private int waypointIndex = -1;*/
     public float speed;
     public bool activStazis = false;
     //public Transform look;
 
     void Start()
     {
-        waypoints1 = GameObject.Find("WayPoints(1)").transform;
+        /*waypoints1 = GameObject.Find("WayPoints(1)").transform;
         waypoints2 = GameObject.Find("WayPoints(2)").transform;
         if((waypoints1.GetChild(0).position - transform.position).magnitude < (waypoints2.GetChild(0).position - transform.position).magnitude)
         waypoints = waypoints1;
         else waypoints = waypoints2;
-        NextWaypoint();
+        NextWaypoint();*/
+
+        
     }
 
     
@@ -35,21 +37,22 @@ public class Enemy : MonoBehaviour
         //transform.position = Vector2.MoveTowards(transform.position,new Vector2(0,0),Time.deltaTime*1f);     //идем к цели
         if (hp <= 0) { Destroy(this.gameObject); Main.kredit += 5; }
 
-        Vector3 dir = (waypoint.transform.position - transform.position);
+        /*Vector3 dir = (waypoint.transform.position - transform.position);
         
         //look.transform.right = new Vector3(waypoint.transform.position.x,waypoint.transform.position.y, 0f);
         //float _speed = Time.deltaTime * speed;
         //transform.Translate(dir.normalized * _speed);
 
         transform.position = Vector2.MoveTowards(transform.position, waypoint.transform.position,Time.deltaTime*speed);
-        transform.up = new Vector2(dir.x,dir.y);      
+              
         
 
         if (dir.magnitude <= 0.3f)
-        NextWaypoint();
+        NextWaypoint();*/
+        transform.up = new Vector2(target.position.x,target.position.y);
     }
 
-    void NextWaypoint()
+    /*void NextWaypoint()
     {
        waypointIndex++;
 
@@ -60,7 +63,7 @@ public class Enemy : MonoBehaviour
        }
 
        waypoint = waypoints.GetChild(waypointIndex);
-    }
+    }*/
 
     private void OnCollisionEnter2D(Collision2D other){
         Tower tower = other.gameObject.GetComponent<Tower>();
