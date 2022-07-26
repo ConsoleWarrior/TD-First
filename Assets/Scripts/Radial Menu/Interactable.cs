@@ -14,10 +14,14 @@ public class Interactable : MonoBehaviour
     public Action[] options;
 
     public static GameObject field;
-    public bool empty = true;
+    //public bool empty;
     public GameObject turel;
 
+    /*void Update()
+    {
 
+        if (turel == null) empty = true; //лишняя проверка((
+    }*/
 
     void OnMouseDown(){
         //говорим канвасу вызвать меню

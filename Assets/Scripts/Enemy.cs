@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     //public Transform target; //цель
     public float hp = 200;
     public int dmg = 10;
+    public float attackspeed = 3f;
     private IEnumerator corot;
     private Transform waypoints;
     private Transform waypoint;
@@ -83,7 +84,7 @@ public class Enemy : MonoBehaviour
             {
                 
                 tower.hp -= enemy.dmg;Debug.Log("Hit Base!");
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(attackspeed);
             }
     }
 }

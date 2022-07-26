@@ -7,12 +7,12 @@ public class MenuC : MonoBehaviour
     public ButtonC buttonPrefab;
     public ButtonC selected;
     private Interactable field;
-    private GameObject c;
+    //private GameObject c;
     
 
     public void SpawnButtons(Interactable obj){
         field = obj;
-        if(obj.empty == false){
+        if(obj.turel){
             ButtonC newButton = Instantiate(buttonPrefab) as ButtonC;
             newButton.transform.SetParent (transform, false);
             newButton.transform.localPosition = new Vector3(0f,30f,0f);
@@ -42,13 +42,16 @@ public class MenuC : MonoBehaviour
             if(selected) {Debug.Log($"selected{selected.title}");//ЗДЕСЬ НАЗНАЧЕНИЕ БАТТОНА
             switch (selected.title)
             {
-                case "Turret": field.turel = CreateTurret.SozdatTurret(Interactable.field);
-                        if (field.turel) { field.empty = false; break; } else break;
-                case "Stazis": field.turel = CreateTurret.SozdatStazis(Interactable.field);
-                        if (field.turel) { field.empty = false; break; } else break;
-                case "BitcoinMine": field.turel = CreateTurret.SozdatBitcoinMine(Interactable.field); 
-                        if (field.turel) { field.empty = false; break; } else break;      
-                case "Destroy": Destroy (field.turel); field.empty = true; break;
+                case "Turret": field.turel = CreateTurret.SozdatTurret(Interactable.field); break;
+                    // if (field.turel) { field.empty = false; break; } else break;
+                    case "Stazis": field.turel = CreateTurret.SozdatStazis(Interactable.field); break;
+                    // if (field.turel) { field.empty = false; break; } else break;
+                    case "BitcoinMine": field.turel = CreateTurret.SozdatBitcoinMine(Interactable.field); break;
+                    //if (field.turel) { field.empty = false; break; } else break;
+                    case "Platform": field.turel = CreateTurret.SozdatPlatform(Interactable.field); break;
+                    //if (field.turel) { field.empty = false; break; } else break;
+                    case "Energized": field.turel = CreateTurret.SozdatEnergized(Interactable.field); break;
+                    case "Destroy": Destroy (field.turel); /*field.empty = true;*/ break;
                 
             }
             }
