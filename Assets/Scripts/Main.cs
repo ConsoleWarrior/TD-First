@@ -16,7 +16,7 @@ public class Main : MonoBehaviour
         while(true){
             
             Instantiate(Resources.Load("Enemy", typeof(Enemy)), new Vector2(UnityEngine.Random.Range(-10,-20), UnityEngine.Random.Range(-10,10)), Quaternion.identity);
-            yield return new WaitForSeconds(UnityEngine.Random.Range(0.1f,4f));// рандомный спавн
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.1f,4f));// рандомный спавн 0.1f,4f
         }
     }
     

@@ -107,9 +107,9 @@ NavMeshSettings:
     serializedVersion: 2
     agentTypeID: 0
     agentRadius: 0.5
-    agentHeight: 1
+    agentHeight: 3
     agentSlope: 45
-    agentClimb: 1
+    agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -8201,7 +8201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc74106ff632be4b9913795e27ce3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 3
+  delay: 0
   bitcoin: {fileID: 1675227353}
 --- !u!114 &519420034
 MonoBehaviour:
@@ -32754,7 +32754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3226579936910753474, guid: 45c8f82a29bce554ebe98ceeb2376f75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.55
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3226579936910753474, guid: 45c8f82a29bce554ebe98ceeb2376f75, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34970,7 +34970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3226579936910753474, guid: 45c8f82a29bce554ebe98ceeb2376f75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3226579936910753474, guid: 45c8f82a29bce554ebe98ceeb2376f75, type: 3}
       propertyPath: m_LocalPosition.y
@@ -35173,7 +35173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045310125}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35830,7 +35830,7 @@ MonoBehaviour:
   m_OverrideTileSize: 1
   m_TileSize: 60
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.033333335
+  m_VoxelSize: 0.07666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: c8d2a19184085474a9f5e2b6ae8800af, type: 2}

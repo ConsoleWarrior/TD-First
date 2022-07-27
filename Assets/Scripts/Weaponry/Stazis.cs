@@ -12,8 +12,9 @@ public class Stazis : MonoBehaviour
         if(other.CompareTag("Enemy")){
             //activ.Add(other.gameObject); default.Add(other.gameObject);
             Enemy a = other.gameObject.GetComponent<Enemy>();
+
             if(a.activStazis == false){
-            a.speed *= 0.5f;
+            a.GetComponent<UnityEngine.AI.NavMeshAgent>().speed *= 0.5f;
             SpriteRenderer b  = other.gameObject.GetComponent<SpriteRenderer>();
             b.color = Color.blue;
             a.activStazis = true;
@@ -27,7 +28,7 @@ public class Stazis : MonoBehaviour
         if(other.CompareTag("Enemy")){
             Enemy a = other.gameObject.GetComponent<Enemy>();
             a.activStazis = false;
-            a.speed *= 2f;
+            a.GetComponent<UnityEngine.AI.NavMeshAgent>().speed *= 2f;
             other.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             //b.color = Color.red;SpriteRenderer b  = 
 

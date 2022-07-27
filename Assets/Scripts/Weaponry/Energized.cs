@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Energized : MonoBehaviour
 {
-    public int dmg = 25;
+    public int dmg;
     private IEnumerator corot;
 
     void OnTriggerEnter2D(Collider2D other)

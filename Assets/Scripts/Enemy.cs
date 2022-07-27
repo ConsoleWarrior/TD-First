@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     private Transform waypoints1;
     private Transform waypoints2;
     private int waypointIndex = -1;*/
-    public float speed;
+    //public float speed;
     public bool activStazis = false;
     //public Transform look;
 
