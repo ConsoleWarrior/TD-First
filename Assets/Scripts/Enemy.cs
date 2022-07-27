@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
 
         if (dir.magnitude <= 0.3f)
         NextWaypoint();*/
-        transform.up = new Vector2(target.position.x,target.position.y);
+        //transform.up = new Vector2(target.position.x,target.position.y); 
     }
 
     /*void NextWaypoint()

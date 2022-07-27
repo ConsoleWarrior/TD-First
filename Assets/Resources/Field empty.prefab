@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: ee539e048be30944590939cb362ae943, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -128,5 +128,4 @@ MonoBehaviour:
   - color: {r: 0, g: 0, b: 0.5294118, a: 0.5019608}
     sprite: {fileID: 21300000, guid: 4edaadf38012f48409abdbf27437a7a7, type: 3}
     title: Platform
-  empty: 1
   turel: {fileID: 0}
