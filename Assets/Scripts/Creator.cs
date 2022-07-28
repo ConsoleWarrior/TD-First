@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateTurret : MonoBehaviour
+public class Creator : MonoBehaviour
 {
     //public GameObject turretprefab;
     //private GameObject turret;
@@ -13,19 +13,19 @@ public class CreateTurret : MonoBehaviour
         turret = GameObject.Instantiate(turretprefab,pos,Quaternion.identity);//
         Debug.Log("Turret installed");
     }*/
-    public static GameObject SozdatTurret(GameObject field){
+    public static GameObject CreateCannon(GameObject field){
         if (Main.kredit >= 50)
         {
             Vector3 pos = new Vector3(field.transform.position.x, field.transform.position.y, 2f);//Camera.main.ScreenToWorldPoint(Input.mousePosition)
-            GameObject c = (GameObject)Object.Instantiate(Resources.Load("Turret 1", typeof(GameObject)), pos, Quaternion.identity);
+            GameObject c = (GameObject)Object.Instantiate(Resources.Load("Cannon", typeof(GameObject)), pos, Quaternion.identity);
             c.transform.SetParent(field.transform,true);
-            Debug.Log("Turret installed");
+            Debug.Log("Cannon installed");
             Main.kredit -= 50;
             return c;
         }
         else return null;
     }
-    public static GameObject SozdatStazis(GameObject field){
+    public static GameObject CreateStazis(GameObject field){
         if (Main.kredit >= 50)
         {
             Vector3 pos = new Vector3(field.transform.position.x, field.transform.position.y, 2f);//Camera.main.ScreenToWorldPoint(Input.mousePosition)
@@ -38,7 +38,7 @@ public class CreateTurret : MonoBehaviour
         else return null;
         
     }
-    public static GameObject SozdatBitcoinMine(GameObject field){
+    public static GameObject CreateBitcoinMine(GameObject field){
         if (Main.kredit >= 50)
         {
             Vector3 pos = new Vector3(field.transform.position.x, field.transform.position.y, 2f);//Camera.main.ScreenToWorldPoint(Input.mousePosition)
@@ -50,7 +50,7 @@ public class CreateTurret : MonoBehaviour
         }
         else return null;
     }
-    public static GameObject SozdatPlatform(GameObject field)
+    public static GameObject CreatePlatform(GameObject field)
     {
         if (Main.kredit >= 50)
         {
@@ -63,7 +63,7 @@ public class CreateTurret : MonoBehaviour
         }
         else return null;
     }
-    public static GameObject SozdatEnergized(GameObject field)
+    public static GameObject CreateEnergized(GameObject field)
     {
         if (Main.kredit >= 50)
         {
@@ -76,14 +76,14 @@ public class CreateTurret : MonoBehaviour
         }
         else return null;
     }
-    public static GameObject SozdatMasterskaja(GameObject field)
+    public static GameObject CreateWorkshop(GameObject field)
     {
         if (Main.kredit >= 50)
         {
             Vector3 pos = new Vector3(field.transform.position.x, field.transform.position.y, 2f);//Camera.main.ScreenToWorldPoint(Input.mousePosition)
-            GameObject c = (GameObject)Object.Instantiate(Resources.Load("Masterskaja", typeof(GameObject)), pos, Quaternion.identity);
+            GameObject c = (GameObject)Object.Instantiate(Resources.Load("Workshop", typeof(GameObject)), pos, Quaternion.identity);
             c.transform.SetParent(field.transform, true);
-            Debug.Log("Masterskaja installed");
+            Debug.Log("Workshop installed");
             Main.kredit -= 50;
             return c;
         }

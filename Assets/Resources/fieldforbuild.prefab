@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7062940491234061472}
   - component: {fileID: 7062940491234061487}
   m_Layer: 0
-  m_Name: fieldforbuild
+  m_Name: Fieldforbuild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,5 +130,5 @@ MonoBehaviour:
     title: BitcoinMine
   - color: {r: 0, g: 0.0050052516, b: 0.7735849, a: 0.5019608}
     sprite: {fileID: 21300000, guid: de16b57242229654282a7c9063045ae0, type: 3}
-    title: Masterskaja
+    title: Workshop
   turel: {fileID: 0}

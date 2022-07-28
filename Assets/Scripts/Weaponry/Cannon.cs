@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Cannon : MonoBehaviour
 {
     public GameObject curenemy;
     public bool lockfire = false;

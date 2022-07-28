@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Masterskaja : MonoBehaviour
+public class Workshop : MonoBehaviour
 {
     void Awake()
     {
-        Tower.repair += 1;
+        Destructible.repair += 1;
     }
 }

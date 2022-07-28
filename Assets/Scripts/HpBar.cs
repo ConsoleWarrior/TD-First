@@ -6,15 +6,10 @@ using UnityEngine.UI;
 public class HpBar : MonoBehaviour
 {
     public Image bar;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        Tower tower = gameObject.GetComponent<Tower>();
-        bar.fillAmount = tower.hp/tower.maxhp;
+        Destructible ship = gameObject.GetComponent<Destructible>();
+        bar.fillAmount = ship.hp/ship.maxhp;
     }
 }

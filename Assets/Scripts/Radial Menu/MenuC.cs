@@ -7,8 +7,7 @@ public class MenuC : MonoBehaviour
     public ButtonC buttonPrefab;
     public ButtonC selected;
     private Interactable field;
-    //private GameObject c;
-    
+  
 
     public void SpawnButtons(Interactable obj){
         field = obj;
@@ -39,22 +38,22 @@ public class MenuC : MonoBehaviour
 
     void Update(){
         if(Input.GetMouseButtonUp(0)){
-            if(selected) {Debug.Log($"selected{selected.title}");//ЗДЕСЬ НАЗНАЧЕНИЕ БАТТОНА
-            switch (selected.title)
-            {
-                case "Turret": field.turel = CreateTurret.SozdatTurret(Interactable.field); break;
+            if(selected) {//Debug.Log($"selected: <{selected.title}>");//ЗДЕСЬ НАЗНАЧЕНИЕ БАТТОНА
+                switch (selected.title)
+                {
+                case "Cannon": field.turel = Creator.CreateCannon(Interactable.field); break;
                     // if (field.turel) { field.empty = false; break; } else break;
-                    case "Stazis": field.turel = CreateTurret.SozdatStazis(Interactable.field); break;
+                    case "Stazis": field.turel = Creator.CreateStazis(Interactable.field); break;
                     // if (field.turel) { field.empty = false; break; } else break;
-                    case "BitcoinMine": field.turel = CreateTurret.SozdatBitcoinMine(Interactable.field); break;
+                    case "BitcoinMine": field.turel = Creator.CreateBitcoinMine(Interactable.field); break;
                     //if (field.turel) { field.empty = false; break; } else break;
-                    case "Platform": field.turel = CreateTurret.SozdatPlatform(Interactable.field); break;
+                    case "Platform": field.turel = Creator.CreatePlatform(Interactable.field); break;
                     //if (field.turel) { field.empty = false; break; } else break;
-                    case "Energized": field.turel = CreateTurret.SozdatEnergized(Interactable.field); break;
-                    case "Masterskaja": field.turel = CreateTurret.SozdatMasterskaja(Interactable.field); break;
+                    case "Energized": field.turel = Creator.CreateEnergized(Interactable.field); break;
+                    case "Workshop": field.turel = Creator.CreateWorkshop(Interactable.field); break;
                     case "Destroy": Destroy (field.turel); /*field.empty = true;*/ break;
                 
-            }
+                }
             }
             Destroy (gameObject);
         }

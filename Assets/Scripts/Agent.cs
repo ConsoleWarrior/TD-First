@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NN : MonoBehaviour
+public class Agent : MonoBehaviour
 {
     public Transform target;
     UnityEngine.AI.NavMeshAgent agent;
