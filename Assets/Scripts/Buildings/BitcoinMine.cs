@@ -8,6 +8,6 @@ public class BitcoinMine : MonoBehaviour
 
     void Update()
     {
-        Main.kredit += Time.deltaTime*0.5f;
+        Main.kredit += Time.deltaTime*0.8f;
     }
 }

@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         //transform.position = Vector2.MoveTowards(transform.position,new Vector2(0,0),Time.deltaTime*1f);     //идем к цели
-        if (hp <= 0) { Destroy(this.gameObject); Main.kredit += 5; }
+        if (hp <= 0) { Destroy(this.gameObject); Main.kredit += 1; }
 
         /*Vector3 dir = (waypoint.transform.position - transform.position);
         

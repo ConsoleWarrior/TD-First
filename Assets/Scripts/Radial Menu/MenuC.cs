@@ -51,6 +51,7 @@ public class MenuC : MonoBehaviour
                     case "Platform": field.turel = CreateTurret.SozdatPlatform(Interactable.field); break;
                     //if (field.turel) { field.empty = false; break; } else break;
                     case "Energized": field.turel = CreateTurret.SozdatEnergized(Interactable.field); break;
+                    case "Masterskaja": field.turel = CreateTurret.SozdatMasterskaja(Interactable.field); break;
                     case "Destroy": Destroy (field.turel); /*field.empty = true;*/ break;
                 
             }
