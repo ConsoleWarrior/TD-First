@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3226579936910753475}
   - component: {fileID: 3226579936910753477}
   - component: {fileID: 8208712587656196768}
+  - component: {fileID: 988814105813930439}
   m_Layer: 0
   m_Name: Field Wall
   m_TagString: Untagged
@@ -110,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.8, y: 4.8}
+  m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
 --- !u!114 &8208712587656196768
 MonoBehaviour:
@@ -132,3 +133,24 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 18ef47eb6bd82854ebe9e763ee8ad06b, type: 3}
     title: Stazis
   turel: {fileID: 0}
+--- !u!50 &988814105813930439
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3226579936910753478}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
