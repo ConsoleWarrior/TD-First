@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4258512157487003819}
   - component: {fileID: 4258512157487003818}
   - component: {fileID: 4258512157487003817}
-  - component: {fileID: 7049280882503602365}
   - component: {fileID: 7049280882503602366}
   - component: {fileID: 790017053321182736}
   m_Layer: 0
@@ -103,27 +102,6 @@ MonoBehaviour:
   hp: 1000
   gameover: {fileID: 0}
   maxhp: 1000
---- !u!50 &7049280882503602365
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4258512157487003823}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 488c2efee46c2ff4aaca42a4e23d8834, type: 2}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!114 &7049280882503602366
 MonoBehaviour:
   m_ObjectHideFlags: 0

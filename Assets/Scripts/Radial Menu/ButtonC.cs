@@ -10,6 +10,7 @@ public class ButtonC : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Image icon;
     public string title;
     public MenuC myMeny;
+    public Image rotate;
 
     Color defaultColor;
 
