@@ -24,6 +24,22 @@ public class Stazis : MonoBehaviour
 
         }
     }
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.CompareTag("Enemy")){
+            //activ.Add(other.gameObject); default.Add(other.gameObject);
+            Enemy a = other.gameObject.GetComponent<Enemy>();
+            //def = other.gameObject;
+            if(a.activStazis == false){
+            a.GetComponent<UnityEngine.AI.NavMeshAgent>().speed *= 0.5f;
+            //SpriteRenderer b  = other.gameObject.GetComponent<SpriteRenderer>();
+            //b.color = Color.blue;
+            a.activStazis = true;
+            }
+            //target = other.gameObject.transform;
+            //curenemy = other.gameObject;
+
+        }
+    }
     void OnTriggerExit2D(Collider2D other){
         if(other.CompareTag("Enemy")){
             Enemy a = other.gameObject.GetComponent<Enemy>();
