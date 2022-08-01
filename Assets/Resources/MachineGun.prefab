@@ -127,10 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curenemy: {fileID: 0}
   lockfire: 0
-  bullet: {fileID: 734061089066097326, guid: 494447a360d08cb41824868dfd5602e8, type: 3}
-  target: {fileID: 0}
-  firespeed: 0.01
+  firespeed: 0.05
   isshoot: 0
+  dmg: 5
 --- !u!95 &4234861121544567077
 Animator:
   serializedVersion: 4

@@ -5,8 +5,10 @@ using UnityEngine;
 public class Ant : Arthropods
 {   
     private IEnumerator corot;
+    
 
-
+    
+    
     private void OnCollisionEnter2D(Collision2D other){
         Destructible dest = other.gameObject.GetComponent<Destructible>();
         if(dest == null) return;

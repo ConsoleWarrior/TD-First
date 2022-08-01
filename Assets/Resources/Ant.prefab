@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3078825950883777435}
   - component: {fileID: 7581317618032243965}
   - component: {fileID: -2741256396209360923}
+  - component: {fileID: 7235584349258583289}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Enemy
@@ -112,7 +113,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 2.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -137,9 +138,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
-  dmg: 1
+  dmg: 10
   attackspeed: 3
   activStazis: 0
+  bleeding: 0
+  bleed: {fileID: 0}
 --- !u!70 &7581317618032243965
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -177,3 +180,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &7235584349258583289
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8590884519620592967}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 205822fd37a8c184ab66f0f9aadf78d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

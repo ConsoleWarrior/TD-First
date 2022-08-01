@@ -9,11 +9,18 @@ public class Enemy : MonoBehaviour
     public int dmg;
     public float attackspeed;
     public bool activStazis = false;
-
+    public bool bleeding = false;
+    public Animator bleed;
+    
+    void Start()
+    {
+        bleed = GetComponent<Animator>();
+    }
     void Update()
     {
         if (hp <= 0) { Destroy(this.gameObject); Main.kredit += 1; }
-
+        if (bleeding) bleed.SetBool("Bleeding", true);
+        if (!bleeding) bleed.SetBool("Bleeding", false);
     }
 
 }

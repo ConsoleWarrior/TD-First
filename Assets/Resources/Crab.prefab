@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 631962804817363151}
   - component: {fileID: 1905526430675930798}
   - component: {fileID: 8907144329438465879}
+  - component: {fileID: 4107223193441667208}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Enemy
@@ -164,6 +165,8 @@ MonoBehaviour:
   dmg: 50
   attackspeed: 5
   activStazis: 0
+  bleeding: 0
+  bleed: {fileID: 0}
 --- !u!114 &8907144329438465879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +180,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4258512157487003819, guid: 9d2d04c392926a64d9233fa917f1c25c, type: 3}
+--- !u!95 &4107223193441667208
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307725685992009045}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e29378daf4e1e7f48babea986134ebf2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
