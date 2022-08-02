@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GenerateWall : MonoBehaviour
 {
     public GameObject prefab;
     public Transform field;//родительский объект папка
+    public NavMeshSurface2d surfaces;
     public bool[,] Grid = new bool[22,22];
-    private float x = -9.5f, y = 9.5f;
-    private int a = 1, b = 1;
+    //private float x = 0.5f, y = 0.5f;
+    //private int a = 1, b = 1;
     private int kas = 0;
     private bool yes = false;
+    private int countwall = 0;
     void Start()
     {
-        for(int i = 0; i < Grid.GetLength(0); i++)//задали везде афдыу
+        for(int i = 0; i < Grid.GetLength(0); i++)//задали везде false
             for(int j = 0; j < Grid.GetLength(1); j++)
                 Grid[i,j] = false;
+
         for(int j = 0; j < Grid.GetLength(1); j++) //задали тру по краям
             Grid[0,j] = true;
         for(int j = 0; j < Grid.GetLength(1); j++)
@@ -24,10 +28,23 @@ public class GenerateWall : MonoBehaviour
             Grid[i,0] = true;
         for(int i = 0; i < Grid.GetLength(0); i++)
             Grid[i,21] = true;
-        Generator2();
-        //var cell = Instantiate(prefab, new Vector2(-10.5f,10.5f),Quaternion.identity, field);
+
+        for (int i = 10; i < 13; i++)//задали в центр тру
+            for (int j = 10; j < 13; j++)
+                Grid[i, j] = true;
+
+        Generator(9.5f, 9.5f, 10, 10);
+        Generator(11.5f, 11.5f, 12, 12);
+        Generator(11.5f, 9.5f, 12, 10);
+        Generator(9.5f, 11.5f, 10, 12);
+        Generator(10.5f, 8.5f, 11, 9);
+        Generator(10.5f, 12.5f, 11, 13);
+        Generator(8.5f, 10.5f, 9, 11);
+        Generator(12.5f, 10.5f, 13, 11);
+        surfaces.BuildNavMesh();
+
     }
-    void Generator()
+    /*void Generator()
     {
         for (int i = 0; i < 1; i++)
         {
@@ -36,14 +53,16 @@ public class GenerateWall : MonoBehaviour
             x += Random.Range(-1, 2);y += Random.Range(-1, 2);
             //if (field.childCount > 0) Debug.Log("EST");
         }
-    }
-    void Generator2()
+    }*/
+    void Generator(float x, float y,int a, int b)
     {
-        for (int k = 0; k < 5; k++)//длинна стены
+        //Instantiate(prefab, new Vector2(x, y), Quaternion.identity, field); //первая клетка
+        //Grid[a, b] = true;
+        for (int k = 0; k < 50; k++)//длинна стены
         {
             //var cell = Instantiate(prefab, new Vector2(x,y),Quaternion.identity, field); //первая клетка
             //Grid[a,b] = true;
-            yes = false;
+            yes = false;int test = 0;
             while(!yes){
                 int ran1 = Random.Range(-1,2); int ran2 = Random.Range(-1,2); 
                 int s = a + ran1; int d = b + ran2; //возможно 0 0 будет херня!!! находим перспективную точку
@@ -51,17 +70,23 @@ public class GenerateWall : MonoBehaviour
                     for(int i = s - 1; i < s + 2; i++) //цикл проверки окружающих клеток
                         for(int j = d - 1; j < d + 2; j++)
                             if(Grid[i,j]) kas++;
-                        
+                    //Debug.Log($"Касаний{s},{d}:{kas}");  
                     if(kas<2) {
                         var cell = Instantiate(prefab, new Vector2(x+ran1,y+ran2),Quaternion.identity, field); //возможно проблема с флоатом
                         Grid[s,d] = true;
-                        kas = 0;
                         yes = true;
                         x = x + ran1; y = y + ran2;
                         a = s; b = d;
+                        //Debug.Log($"нашел подходящую свободную клетку {a},{b} = {x};{y}");
+                        //Debug.Log($"Test {test}");
+                        countwall++;
                     } 
                 }
+                test++;kas = 0;
+                //if (test == 10) { yes = true; Debug.Log("Test"); }
+                if(test>20) yes = true;
             }
+            if (k == 49) { Debug.Log($"Длинна стены {countwall}"); countwall = 0; }
         }
     }
 }

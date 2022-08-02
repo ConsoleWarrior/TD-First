@@ -19,16 +19,27 @@ public class Main : MonoBehaviour
     private GameObject ship;
     private bool boss = false;
 
-    IEnumerator CreatorLeft(){
+    IEnumerator Creator(){
         while(true){
             if (timer > 60 && delay > 1) {delay -= 0.5f; timer = 0;}
             if(timer >60 && delay > 0.5 && delay <= 1) { delay -= 0.2f; timer = 0; }
-            Instantiate(Resources.Load("Ant", typeof(Ant)), new Vector3(UnityEngine.Random.Range(-10,-20), UnityEngine.Random.Range(-10,10)), Quaternion.identity);
-            yield return new WaitForSeconds(delay);// рандомный спавн UnityEngine.Random.Range(0.1f,4f)
+            
+            Instantiate(Resources.Load("Ant", typeof(Ant)), new Vector3(UnityEngine.Random.Range(-10, 0), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
+            Instantiate(Resources.Load("Ant", typeof(Ant)), new Vector2(UnityEngine.Random.Range(20, 30), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
+            if (alltimer > 480f && boss == false)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    Instantiate(Resources.Load("Crab", typeof(Crab)), new Vector2(UnityEngine.Random.Range(-10, 0), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
+                    Instantiate(Resources.Load("Crab", typeof(Crab)), new Vector2(UnityEngine.Random.Range(20, 30), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
+                }
+                boss = true;
+            }
+            yield return new WaitForSeconds(delay);
             timer += delay; alltimer += delay;
         }
     }
-    IEnumerator CreatorRight()
+    /*IEnumerator CreatorRight() //выключено и объеденено
     {
         while (true)
         {
@@ -44,15 +55,15 @@ public class Main : MonoBehaviour
                 boss = true;
             }
         }
-    }
+    }*/
 
 
     void Start()
     {
-        corot = CreatorLeft();
+        corot = Creator();
         StartCoroutine(corot);
-        corot = CreatorRight();
-        StartCoroutine(corot);
+        //corot = CreatorRight();
+        //StartCoroutine(corot);
         ship = GameObject.Find("Ship");
     }
 
