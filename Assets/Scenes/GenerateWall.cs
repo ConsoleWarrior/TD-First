@@ -33,14 +33,19 @@ public class GenerateWall : MonoBehaviour
             for (int j = 10; j < 13; j++)
                 Grid[i, j] = true;
 
-        Generator(9.5f, 9.5f, 10, 10);
+        /*Generator(9.5f, 9.5f, 10, 10);
         Generator(11.5f, 11.5f, 12, 12);
         Generator(11.5f, 9.5f, 12, 10);
         Generator(9.5f, 11.5f, 10, 12);
         Generator(10.5f, 8.5f, 11, 9);
         Generator(10.5f, 12.5f, 11, 13);
         Generator(8.5f, 10.5f, 9, 11);
-        Generator(12.5f, 10.5f, 13, 11);
+        Generator(12.5f, 10.5f, 13, 11);*/
+        KorridorCutter(9,10);
+        KorridorCutter(9,13);
+        KorridorCutter(13,13);
+        KorridorCutter(13,9);
+        FillGenerator(-0.5f, -0.5f);
         surfaces.BuildNavMesh();
 
     }
@@ -54,7 +59,7 @@ public class GenerateWall : MonoBehaviour
             //if (field.childCount > 0) Debug.Log("EST");
         }
     }*/
-    void Generator(float x, float y,int a, int b)
+    void WallGenerator(float x, float y,int a, int b) // устарел
     {
         //Instantiate(prefab, new Vector2(x, y), Quaternion.identity, field); //первая клетка
         //Grid[a, b] = true;
@@ -86,7 +91,42 @@ public class GenerateWall : MonoBehaviour
                 //if (test == 10) { yes = true; Debug.Log("Test"); }
                 if(test>20) yes = true;
             }
-            if (k == 49) { Debug.Log($"Длинна стены {countwall}"); countwall = 0; }
+            if (k == 49) { Debug.Log($"Длина стены {countwall}"); countwall = 0; }
         }
+    }
+    void FillGenerator(float x, float y){ //стартовые координаты - нижний левый угол
+        
+        for(int i = 0; i < Grid.GetLength(0); i++)//заполняем арену стенами по фалсу
+            for(int j = 0; j < Grid.GetLength(1); j++)
+                if (!Grid[i,j]){
+
+                    Instantiate(prefab, new Vector2(x + i, y + j), Quaternion.identity, field);
+                }
+    }
+    void KorridorCutter(int a, int b){ //координаты стратовых точек для корридоров
+        bool good = false; int fail = 0;
+        for(int i = 0; i < 50; i++){
+            while(!good){
+                switch(Random.Range(1,5)){ //пробуем прорезать соседа случайного
+                    case 1 : if(Try(a, b+1)) {Grid[a,b+1] = true; good = true; b = b+1;} else fail++; break;
+                    case 2 : if(Try(a, b-1)) {Grid[a,b-1] = true; good = true; b = b-1;} else fail++; break;
+                    case 3 : if(Try(a+1, b)) {Grid[a+1,b] = true; good = true; a = a+1;} else fail++; break;
+                    case 4 : if(Try(a-1, b)) {Grid[a-1,b] = true; good = true; a = a-1;} else fail++; break;
+                }
+                if (fail > 20) break;
+            }
+            if (fail > 20) {Debug.Log("fail"); break;}
+            good = false; fail = 0;
+        }
+    }
+    bool Try (int a, int b){ //проверка на соседние клетки
+        int count = 0;
+        if(Grid[a, b+1]) count++;
+        if(Grid[a, b-1]) count++;
+        if(Grid[a+1, b]) count++;
+        if(Grid[a-1, b]) count++;
+        
+        if(count > 1) return false;
+        else return true;
     }
 }
