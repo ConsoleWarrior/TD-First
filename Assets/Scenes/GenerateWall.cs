@@ -8,7 +8,7 @@ public class GenerateWall : MonoBehaviour
     public GameObject prefab;
     public Transform field;//родительский объект папка
     public NavMeshSurface2d surfaces;
-    public bool[,] Grid = new bool[22,22];
+    public bool[,] Grid = new bool[24,24];
     //private float x = 0.5f, y = 0.5f;
     //private int a = 1, b = 1;
     private int kas = 0;
@@ -23,14 +23,14 @@ public class GenerateWall : MonoBehaviour
         for(int j = 0; j < Grid.GetLength(1); j++) //задали тру по краям
             Grid[0,j] = true;
         for(int j = 0; j < Grid.GetLength(1); j++)
-            Grid[21,j] = true;
+            Grid[23,j] = true;
         for(int i = 0; i < Grid.GetLength(0); i++)
             Grid[i,0] = true;
         for(int i = 0; i < Grid.GetLength(0); i++)
-            Grid[i,21] = true;
+            Grid[i,23] = true;
 
-        for (int i = 10; i < 13; i++)//задали в центр тру
-            for (int j = 10; j < 13; j++)
+        for (int i = 11; i < 14; i++)//задали в центр тру
+            for (int j = 11; j < 14; j++)
                 Grid[i, j] = true;
 
         /*Generator(9.5f, 9.5f, 10, 10);
@@ -41,11 +41,15 @@ public class GenerateWall : MonoBehaviour
         Generator(10.5f, 12.5f, 11, 13);
         Generator(8.5f, 10.5f, 9, 11);
         Generator(12.5f, 10.5f, 13, 11);*/
-        KorridorCutter(9,10);
-        KorridorCutter(9,13);
+        KorridorCutter(11,11);
+        KorridorCutter(13,11);
+        KorridorCutter(11,13);
         KorridorCutter(13,13);
-        KorridorCutter(13,9);
-        FillGenerator(-0.5f, -0.5f);
+        KorridorCutter(2, 2);
+        KorridorCutter(2, 21);
+        KorridorCutter(21, 2);
+        KorridorCutter(21, 21);
+        FillGenerator(-1.5f, -1.5f);
         surfaces.BuildNavMesh();
 
     }
@@ -96,16 +100,17 @@ public class GenerateWall : MonoBehaviour
     }
     void FillGenerator(float x, float y){ //стартовые координаты - нижний левый угол
         
-        for(int i = 0; i < Grid.GetLength(0); i++)//заполняем арену стенами по фалсу
-            for(int j = 0; j < Grid.GetLength(1); j++)
+        for(int i = 2; i < Grid.GetLength(0)-2; i++)//заполняем арену стенами по фалсу
+            for(int j = 2; j < Grid.GetLength(1)-2; j++)
                 if (!Grid[i,j]){
 
-                    Instantiate(prefab, new Vector2(x + i, y + j), Quaternion.identity, field);
+                    Instantiate(prefab, new Vector3(x + i, y + j, -1), Quaternion.identity, field);
                 }
     }
     void KorridorCutter(int a, int b){ //координаты стратовых точек для корридоров
+        Grid[a,b] = true;
         bool good = false; int fail = 0;
-        for(int i = 0; i < 50; i++){
+        for(int i = 0; i < 25; i++){
             while(!good){
                 switch(Random.Range(1,5)){ //пробуем прорезать соседа случайного
                     case 1 : if(Try(a, b+1)) {Grid[a,b+1] = true; good = true; b = b+1;} else fail++; break;
@@ -113,13 +118,23 @@ public class GenerateWall : MonoBehaviour
                     case 3 : if(Try(a+1, b)) {Grid[a+1,b] = true; good = true; a = a+1;} else fail++; break;
                     case 4 : if(Try(a-1, b)) {Grid[a-1,b] = true; good = true; a = a-1;} else fail++; break;
                 }
-                if (fail > 20) break;
+                if (fail > 20)
+                {
+                    switch (Random.Range(1, 5))
+                    {
+                        case 1: Grid[a, b + 1] = true; break;
+                        case 2: Grid[a, b - 1] = true; break;
+                        case 3: Grid[a+1, b] = true; break;
+                        case 4: Grid[a-1, b] = true; break;
+                    }
+                    break;
+                }
             }
             if (fail > 20) {Debug.Log("fail"); break;}
             good = false; fail = 0;
         }
     }
-    bool Try (int a, int b){ //проверка на соседние клетки
+    bool Try (int a, int b){ //проверка соседних клеток
         int count = 0;
         if(Grid[a, b+1]) count++;
         if(Grid[a, b-1]) count++;

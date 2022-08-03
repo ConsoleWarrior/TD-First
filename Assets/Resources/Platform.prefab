@@ -132,6 +132,9 @@ MonoBehaviour:
   - color: {r: 0, g: 0, b: 0.5294118, a: 0.5019608}
     sprite: {fileID: 21300000, guid: a761a44ec364d494493447f1e0fe6551, type: 3}
     title: MachineGun
+  - color: {r: 0, g: 0, b: 0.5294118, a: 0.5019608}
+    sprite: {fileID: 21300000, guid: 6ff218c5d7877c64ab14f444c2119d0d, type: 3}
+    title: Cannon
   turel: {fileID: 0}
 --- !u!114 &884982366639990022
 MonoBehaviour:
