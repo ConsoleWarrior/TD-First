@@ -42,13 +42,16 @@ public class GenerateWall : MonoBehaviour
         Generator(8.5f, 10.5f, 9, 11);
         Generator(12.5f, 10.5f, 13, 11);*/
         KorridorCutter(11,11);
-        KorridorCutter(13,11);
-        KorridorCutter(11,13);
-        KorridorCutter(13,13);
-        KorridorCutter(2, 2);
         KorridorCutter(2, 21);
+        KorridorCutter(13, 13);
         KorridorCutter(21, 2);
+        KorridorCutter(11, 13);
+        KorridorCutter(2, 2);
+        KorridorCutter(13,11);
         KorridorCutter(21, 21);
+        KorridorCutter(11, 2);
+        KorridorCutter(12, 21);
+        RandomCutter();
         FillGenerator(-1.5f, -1.5f);
         surfaces.BuildNavMesh();
 
@@ -143,5 +146,12 @@ public class GenerateWall : MonoBehaviour
         
         if(count > 1) return false;
         else return true;
+    }
+    void RandomCutter()
+    {
+        for(int i = 0; i < 20; i++)
+        {
+            Grid[Random.Range(2, 22), Random.Range(2, 22)] = true;
+        }
     }
 }

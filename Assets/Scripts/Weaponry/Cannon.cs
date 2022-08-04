@@ -40,12 +40,13 @@ public class Cannon : MonoBehaviour
 
         }
     }
-    IEnumerator Fire()
+    public virtual IEnumerator Fire()
     {
         isshoot = true;
-        yield return new WaitForSeconds(firespeed);
+        
         GameObject b = GameObject.Instantiate(bullet,look.position,Quaternion.identity);
         b.GetComponent<Bullet>().target = target;
+        yield return new WaitForSeconds(firespeed);
         isshoot = false;
     }
 }

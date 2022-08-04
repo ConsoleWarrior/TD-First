@@ -49,19 +49,16 @@ public class MenuC : MonoBehaviour
             if(selected) {Debug.Log($"selected: <{selected.title}>");//ЗДЕСЬ НАЗНАЧЕНИЕ БАТТОНА
                 switch (selected.title)
                 {
-                case "Cannon": field.turel = Creator.CreateCannon(Interactable.field); break;
-                    // if (field.turel) { field.empty = false; break; } else break;
+                    case "Cannon": field.turel = Creator.CreateCannon(Interactable.field); break;
                     case "Stazis": field.turel = Creator.CreateStazis(Interactable.field); break;
-                    // if (field.turel) { field.empty = false; break; } else break;
                     case "BitcoinMine": field.turel = Creator.CreateBitcoinMine(Interactable.field); break;
-                    //if (field.turel) { field.empty = false; break; } else break;
                     case "Platform": field.turel = Creator.CreatePlatform(Interactable.field); break;
-                    //if (field.turel) { field.empty = false; break; } else break;
                     case "Energized": field.turel = Creator.CreateEnergized(Interactable.field); break;
                     case "Workshop": field.turel = Creator.CreateWorkshop(Interactable.field); break;
                     case "MachineGun": field.turel = Creator.CreateMachineGun(Interactable.field); break;
+                    case "Gaubica": field.turel = Creator.CreateGaubica(Interactable.field); break;
                     case "Rotate": field.turel.transform.rotation *= Quaternion.Euler(0f, 0f, -90f);; break;
-                    case "Destroy": Destroy (field.turel); /*field.empty = true;*/ break;
+                    case "Destroy": Destroy (field.turel); break;
                 
                 }
             }

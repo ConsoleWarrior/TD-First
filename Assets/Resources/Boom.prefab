@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7062940491234061484
+--- !u!1 &8248332886685747716
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7062940491234061486}
-  - component: {fileID: 7062940491234061485}
-  - component: {fileID: 7062940491234061472}
-  - component: {fileID: 7062940491234061487}
+  - component: {fileID: 931571629641145683}
+  - component: {fileID: 7968514402932370909}
+  - component: {fileID: 470692454306829516}
+  - component: {fileID: -4919453251361020055}
+  - component: {fileID: 5298774774630107743}
   m_Layer: 0
-  m_Name: fieldforbuild
+  m_Name: Boom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7062940491234061486
+--- !u!4 &931571629641145683
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7062940491234061484}
+  m_GameObject: {fileID: 8248332886685747716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1859375, y: 0.18243434, z: 1}
+  m_LocalPosition: {x: 22.17, y: 17, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7062940491234061485
+--- !u!212 &7968514402932370909
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7062940491234061484}
+  m_GameObject: {fileID: 8248332886685747716}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,25 +75,25 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: f660fbf3aeb71124ab297a2f61ca2b80, type: 3}
+  m_SortingOrder: 1001
+  m_Sprite: {fileID: 21300000, guid: bf3b837e600e5ef4998c207c8951164c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7062940491234061472
-BoxCollider2D:
+--- !u!58 &470692454306829516
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7062940491234061484}
+  m_GameObject: {fileID: 8248332886685747716}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -100,38 +101,38 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
-  m_EdgeRadius: 0
---- !u!114 &7062940491234061487
+  m_Radius: 2.56
+--- !u!114 &-4919453251361020055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7062940491234061484}
+  m_GameObject: {fileID: 8248332886685747716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c28b09571afe5d4c87bf82e94a7fe45, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e8dca907096f504fb906a38a5734b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  options:
-  - color: {r: 0, g: 0.0050052516, b: 0.7735849, a: 0.5019608}
-    sprite: {fileID: 21300000, guid: 81fe56d6e9a8a8a40944e46c44cb5ee7, type: 3}
-    title: BitcoinMine
-  - color: {r: 0, g: 0.0050052516, b: 0.7735849, a: 0.5019608}
-    sprite: {fileID: 21300000, guid: de16b57242229654282a7c9063045ae0, type: 3}
-    title: Workshop
-  - color: {r: 0, g: 0.0050052516, b: 0.7735849, a: 0.5019608}
-    sprite: {fileID: 21300000, guid: 8f490220585c4354e910f10bd629ba03, type: 3}
-    title: Gaubica
-  turel: {fileID: 0}
+  dmg: 200
+--- !u!95 &5298774774630107743
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248332886685747716}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d7a8d6b225f5ba45b6f5e1026b2872d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

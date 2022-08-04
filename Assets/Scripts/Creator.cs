@@ -101,8 +101,17 @@ public class Creator : MonoBehaviour
         }
         else return null;
     }
-    /*private static bool CheckKredit()
+    public static GameObject CreateGaubica(GameObject field)
     {
-        return true;
-    }*/
+        if (Main.kredit >= 50)
+        {
+            Vector3 pos = new Vector3(field.transform.position.x, field.transform.position.y, 2f);//Camera.main.ScreenToWorldPoint(Input.mousePosition)
+            GameObject c = (GameObject)Object.Instantiate(Resources.Load("Gaubica", typeof(GameObject)), pos, Quaternion.identity);
+            c.transform.SetParent(field.transform, true);
+            Debug.Log("Gaubica installed");
+            Main.kredit -= 50;
+            return c;
+        }
+        else return null;
+    }
 }
