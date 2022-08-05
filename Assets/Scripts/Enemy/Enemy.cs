@@ -10,17 +10,20 @@ public class Enemy : MonoBehaviour
     public float attackspeed;
     public bool activStazis = false;
     public bool bleeding = false;
-    public Animator bleed;
+    public bool burning = false;
+    public Animator anim;
     
     void Start()
     {
-        bleed = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
-    void Update()
-    {
-        if (hp <= 0) { Destroy(this.gameObject); Main.kredit += 1; }
-        if (bleeding) bleed.SetBool("Bleeding", true);
-        if (!bleeding) bleed.SetBool("Bleeding", false);
+   void Update()
+   {
+      if (hp <= 0) { Destroy(this.gameObject); Main.kredit += 1; }
+      if (bleeding) anim.SetBool("Bleeding", true);
+      if (!bleeding) anim.SetBool("Bleeding", false);
+      if (burning) {anim.SetBool("Bleeding", true); hp = hp-Time.deltaTime*20;}
+      if (!burning) anim.SetBool("Bleeding", false);
     }
 
 }

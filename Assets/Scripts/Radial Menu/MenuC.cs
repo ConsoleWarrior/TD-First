@@ -57,6 +57,7 @@ public class MenuC : MonoBehaviour
                     case "Workshop": field.turel = Creator.CreateWorkshop(Interactable.field); break;
                     case "MachineGun": field.turel = Creator.CreateMachineGun(Interactable.field); break;
                     case "Gaubica": field.turel = Creator.CreateGaubica(Interactable.field); break;
+                    case "Firegun": field.turel = Creator.CreateFiregun(Interactable.field); break;
                     case "Rotate": field.turel.transform.rotation *= Quaternion.Euler(0f, 0f, -90f);; break;
                     case "Destroy": Destroy (field.turel); break;
                 
