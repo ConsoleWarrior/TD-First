@@ -17,6 +17,7 @@ public class Firegun : MonoBehaviour
     void OnTriggerExit2D(Collider2D other){
         Enemy c = other.gameObject.GetComponent<Enemy>();
         if (c == null) return;
+        c.burning = false;
         anim.SetBool("Burning", false);
     }
 }

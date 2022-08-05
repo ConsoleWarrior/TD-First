@@ -22,10 +22,18 @@ public class Enemy : MonoBehaviour
       if (hp <= 0) { Destroy(this.gameObject); Main.kredit += 1; }
       if (bleeding) anim.SetBool("Bleeding", true);
       if (!bleeding) anim.SetBool("Bleeding", false);
-      if (burning) {anim.SetBool("Bleeding", true); hp = hp-Time.deltaTime*20;}
-      if (!burning) anim.SetBool("Bleeding", false);
+      if (burning) {
+            if(!anim.GetBool("Burning")) anim.SetBool("Burning", true); 
+            hp = hp-Time.deltaTime*30; 
+      }
+      if(anim.GetBool("Burning")) hp = hp - Time.deltaTime * 10;
+        if (!burning && anim.GetBool("Burning"))  Invoke("StopBurn", 5); 
     }
-
+    void StopBurn()
+    {
+        anim.SetBool("Burning", false);
+        
+    } 
 }
 //transform.position = Vector2.MoveTowards(transform.position,new Vector2(0,0),Time.deltaTime*1f);     //идем к цели
 

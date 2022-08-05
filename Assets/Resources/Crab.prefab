@@ -138,9 +138,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.1
   m_Speed: 0.7
-  m_Acceleration: 1
+  m_Acceleration: 2
   avoidancePriority: 50
-  m_AngularSpeed: 100
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -166,7 +166,8 @@ MonoBehaviour:
   attackspeed: 5
   activStazis: 0
   bleeding: 0
-  bleed: {fileID: 0}
+  burning: 0
+  anim: {fileID: 0}
 --- !u!114 &8907144329438465879
 MonoBehaviour:
   m_ObjectHideFlags: 0
