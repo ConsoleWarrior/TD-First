@@ -133,7 +133,7 @@ public class GenerateWall : MonoBehaviour
                     break;
                 }
             }
-            if (fail > 20) {Debug.Log("fail"); break;}
+            if (fail > 20) {/*Debug.Log("fail");*/ break;}
             good = false; fail = 0;
         }
     }
