@@ -8,6 +8,7 @@ public class Destructible : MonoBehaviour
     //public GameObject gameover;
     public float maxhp;
     public static float repair = 0;
+    public Collider2D body, radius;
 
     void Update()
     {

@@ -14,11 +14,11 @@ public class Bullet : MonoBehaviour
         else Destroy(this.gameObject);//Debug.Log("Nedolet");
     }
 
-    public virtual void OnTriggerEnter2D(Collider2D other){
+    public void OnTriggerEnter2D(Collider2D other){
         
         Enemy a = other.gameObject.GetComponent<Enemy>();
         if(a == null) return;
-        if(a.CompareTag("Enemy"))
+        if(a.CompareTag("Enemy") && other == a.body)
         {
             a.hp -= dmg; //Debug.Log("boom");
             Destroy(this.gameObject);

@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public bool bleeding = false;
     public bool burning = false;
     public Animator anim;
+    public Collider2D body, radius;
+    public Transform target;
     
     void Start()
     {

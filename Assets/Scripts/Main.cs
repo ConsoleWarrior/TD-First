@@ -26,6 +26,8 @@ public class Main : MonoBehaviour
             
             Instantiate(Resources.Load("Ant", typeof(Ant)), new Vector3(UnityEngine.Random.Range(-10, 0), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
             Instantiate(Resources.Load("Ant", typeof(Ant)), new Vector2(UnityEngine.Random.Range(20, 30), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
+            Instantiate(Resources.Load("Mosquito", typeof(Mosquito)), new Vector2(UnityEngine.Random.Range(20, 30), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
+            
             if (alltimer > 480f && boss == false)
             {
                 for (int i = 0; i < 2; i++)

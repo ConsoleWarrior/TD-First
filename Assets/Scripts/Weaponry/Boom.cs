@@ -13,6 +13,8 @@ public class Boom : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Enemy c = other.gameObject.GetComponent<Enemy>();
+        if (c == null) return;
+        if (other = c.body)
         c.hp -= dmg;
         
     }

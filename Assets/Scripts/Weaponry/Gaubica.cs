@@ -8,7 +8,7 @@ public class Gaubica : Cannon
     {
         isshoot = true;
 
-        GameObject b = GameObject.Instantiate(bullet, look.position, Quaternion.identity);
+        GameObject b = GameObject.Instantiate(bullet, transform.position, Quaternion.identity);
         b.GetComponent<Projectile>().target = target;
         yield return new WaitForSeconds(firespeed);
         isshoot = false;

@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8590884519620592967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4258512157487003819, guid: 9d2d04c392926a64d9233fa917f1c25c, type: 3}
+  agent: {fileID: 0}
 --- !u!195 &-8895071107587312627
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -142,7 +143,11 @@ MonoBehaviour:
   attackspeed: 3
   activStazis: 0
   bleeding: 0
-  bleed: {fileID: 0}
+  burning: 0
+  anim: {fileID: 0}
+  body: {fileID: 7581317618032243965}
+  radius: {fileID: 0}
+  target: {fileID: 4258512157487003819, guid: 9d2d04c392926a64d9233fa917f1c25c, type: 3}
 --- !u!70 &7581317618032243965
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

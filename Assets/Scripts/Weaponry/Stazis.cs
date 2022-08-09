@@ -9,7 +9,7 @@ public class Stazis : MonoBehaviour
     //private GameObject def;
     
     void OnTriggerStay2D(Collider2D other){
-        if(other.CompareTag("Enemy")){
+        if(other.CompareTag("Enemy") && other == other.GetComponent<Enemy>().body){
             //activ.Add(other.gameObject); default.Add(other.gameObject);
             Enemy a = other.gameObject.GetComponent<Enemy>();
             //def = other.gameObject;
@@ -25,7 +25,7 @@ public class Stazis : MonoBehaviour
         }
     }
     void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Enemy")){
+        if(other.CompareTag("Enemy") && other == other.GetComponent<Enemy>().body){
             //activ.Add(other.gameObject); default.Add(other.gameObject);
             Enemy a = other.gameObject.GetComponent<Enemy>();
             //def = other.gameObject;
@@ -41,7 +41,7 @@ public class Stazis : MonoBehaviour
         }
     }
     void OnTriggerExit2D(Collider2D other){
-        if(other.CompareTag("Enemy")){
+        if(other.CompareTag("Enemy") && other == other.GetComponent<Enemy>().body){
             Enemy a = other.gameObject.GetComponent<Enemy>();
             a.activStazis = false;
             a.GetComponent<UnityEngine.AI.NavMeshAgent>().speed *= 2f;

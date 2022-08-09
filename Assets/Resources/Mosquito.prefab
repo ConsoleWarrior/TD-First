@@ -120,12 +120,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 50
-  dmg: 3
+  dmg: 0
   attackspeed: 2
   activStazis: 0
   bleeding: 0
   burning: 0
   anim: {fileID: 0}
+  body: {fileID: 7756409112550440575}
+  radius: {fileID: -7320218497811557620}
+  target: {fileID: 4258512157487003819, guid: 9d2d04c392926a64d9233fa917f1c25c, type: 3}
+  curenemy: {fileID: 0}
+  lockfire: 0
+  bullet: {fileID: 7367402928617916326, guid: 8539cc81645205249b9f5b67ff9cadee, type: 3}
+  targ: {fileID: 0}
+  isshoot: 0
 --- !u!195 &-419862187206294713
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -181,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4258512157487003819, guid: 9d2d04c392926a64d9233fa917f1c25c, type: 3}
+  agent: {fileID: 0}
 --- !u!50 &-3369477312788235848
 Rigidbody2D:
   serializedVersion: 4

@@ -168,6 +168,8 @@ MonoBehaviour:
   bleeding: 0
   burning: 0
   anim: {fileID: 0}
+  body: {fileID: 185771433978486925}
+  radius: {fileID: 0}
 --- !u!114 &8907144329438465879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4258512157487003819, guid: 9d2d04c392926a64d9233fa917f1c25c, type: 3}
+  agent: {fileID: 0}
 --- !u!95 &4107223193441667208
 Animator:
   serializedVersion: 4

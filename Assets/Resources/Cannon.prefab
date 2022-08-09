@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8421989822797503054}
   - component: {fileID: -9050062894503540069}
   - component: {fileID: 1319967750638737102}
-  - component: {fileID: -8624673080419551673}
+  - component: {fileID: 6791990273382287652}
+  - component: {fileID: -3629281448255564390}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -120,7 +121,6 @@ MonoBehaviour:
   lockfire: 0
   bullet: {fileID: 2990913914015376816, guid: a2f7f500661a7b940bdd9775b0138637, type: 3}
   target: {fileID: 0}
-  look: {fileID: 8421989822797503088}
   firespeed: 1
   isshoot: 0
 --- !u!114 &1319967750638737102
@@ -137,7 +137,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxhp: 100
---- !u!50 &-8624673080419551673
+  body: {fileID: 6791990273382287652}
+  radius: {fileID: 8421989822797503054}
+--- !u!58 &6791990273382287652
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421989822797503055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!50 &-3629281448255564390
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -145,14 +163,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8421989822797503055}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

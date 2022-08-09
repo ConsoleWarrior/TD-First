@@ -21,7 +21,7 @@ public class MachineGun : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other){
-        if(other.CompareTag("Enemy") && !lockfire){
+        if(other.CompareTag("Enemy") && !lockfire && other == other.gameObject.GetComponent<Enemy>().body){
             //target = other.gameObject.transform;
             lockfire = true;
             curenemy = other.gameObject.GetComponent<Enemy>();
@@ -32,7 +32,8 @@ public class MachineGun : MonoBehaviour
         }
     }
     void OnTriggerExit2D(Collider2D other){
-        if(other.CompareTag("Enemy") && curenemy == other.gameObject.GetComponent<Enemy>()){
+        if(other.CompareTag("Enemy") && curenemy == other.gameObject.GetComponent<Enemy>() && other == other.gameObject.GetComponent<Enemy>().body)
+        {
             lockfire = false;
             StopCoroutine(Fire());
             curenemy.bleeding = false;

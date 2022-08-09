@@ -9,11 +9,13 @@ public class Energized : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        Enemy a = other.gameObject.GetComponent<Enemy>();
+        if (a == null) return;
+        if (other.CompareTag("Enemy") && other == a.body)
         {
             //activ.Add(other.gameObject); default.Add(other.gameObject);
-            Enemy a = other.gameObject.GetComponent<Enemy>();
-            if (a == null) return;
+            
+            //if (a == null) return;
             corot = Damaging(a);
             StartCoroutine(corot);
             //target = other.gameObject.transform;
@@ -23,9 +25,10 @@ public class Energized : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Enemy enemy = other.gameObject.GetComponent<Enemy>();
-        if (enemy == null) return;
-        else { StopCoroutine(corot); Debug.Log("Go away from chock"); }
+        Enemy a = other.gameObject.GetComponent<Enemy>();
+        if (a == null) return;
+        if (other.CompareTag("Enemy") && other == a.body)
+        { StopCoroutine(corot); Debug.Log("Go away from chock"); }
     }
     IEnumerator Damaging(Enemy enemy)
     {
