@@ -34,7 +34,6 @@ public class Enemy : MonoBehaviour
     void StopBurn()
     {
         anim.SetBool("Burning", false);
-        
     } 
 }
 //transform.position = Vector2.MoveTowards(transform.position,new Vector2(0,0),Time.deltaTime*1f);     //идем к цели

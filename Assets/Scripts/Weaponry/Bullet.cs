@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
         else Destroy(this.gameObject);//Debug.Log("Nedolet");
     }
 
-    public void OnTriggerEnter2D(Collider2D other){
+    /*public void OnTriggerEnter2D(Collider2D other){
         
         Enemy a = other.gameObject.GetComponent<Enemy>();
         if(a == null) return;
@@ -22,6 +22,17 @@ public class Bullet : MonoBehaviour
         {
             a.hp -= dmg; //Debug.Log("boom");
             Destroy(this.gameObject);
+        }
+    }*/
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if(other == other.gameObject.GetComponent<Enemy>().body)
+            {
+                other.gameObject.GetComponent<Enemy>().hp -= dmg;
+                Destroy(this.gameObject);
+            }
         }
     }
 }

@@ -17,25 +17,26 @@ public class Main : MonoBehaviour
     public GameObject youwin;
     public GameObject gameover;
     private GameObject ship;
-    private bool boss = false;
+    private int b = 1;
 
     IEnumerator Creator(){
         while(true){
             if (timer > 60 && delay > 1) {delay -= 0.5f; timer = 0;}
-            if(timer >60 && delay > 0.5 && delay <= 1) { delay -= 0.2f; timer = 0; }
+            //if(timer >60 && delay > 0.5 && delay <= 1) { delay -= 0.2f; timer = 0; }
             
             Instantiate(Resources.Load("Ant", typeof(Ant)), new Vector3(UnityEngine.Random.Range(-10, 0), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
             Instantiate(Resources.Load("Ant", typeof(Ant)), new Vector2(UnityEngine.Random.Range(20, 30), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
+            Instantiate(Resources.Load("Mosquito", typeof(Mosquito)), new Vector2(UnityEngine.Random.Range(-10, 0), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
             Instantiate(Resources.Load("Mosquito", typeof(Mosquito)), new Vector2(UnityEngine.Random.Range(20, 30), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
-            
-            if (alltimer > 480f && boss == false)
+
+            if (alltimer > 480f && timer > 30)
             {
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < b; i++)
                 {
                     Instantiate(Resources.Load("Crab", typeof(Crab)), new Vector2(UnityEngine.Random.Range(-10, 0), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
                     Instantiate(Resources.Load("Crab", typeof(Crab)), new Vector2(UnityEngine.Random.Range(20, 30), UnityEngine.Random.Range(1, 19)), Quaternion.identity);
                 }
-                boss = true;
+                b++; timer = 0;
             }
             yield return new WaitForSeconds(delay);
             timer += delay; alltimer += delay;
@@ -78,6 +79,7 @@ public class Main : MonoBehaviour
         timerr.text = alltimer.ToString();
         if (!ship) { gameover.SetActive(true); StopAllCoroutines();}
         
-        if (alltimer >= 600 && ship) { youwin.SetActive(true); StopAllCoroutines();}//WIN
+        if (alltimer >= 600 && ship) StopAllCoroutines();
+        if (alltimer >= 629 && ship) youwin.SetActive(true); 
     }
 }

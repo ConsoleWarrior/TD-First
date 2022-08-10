@@ -163,13 +163,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2000
   dmg: 50
-  attackspeed: 5
+  attackspeed: 4
   activStazis: 0
   bleeding: 0
   burning: 0
   anim: {fileID: 0}
   body: {fileID: 185771433978486925}
   radius: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &8907144329438465879
 MonoBehaviour:
   m_ObjectHideFlags: 0

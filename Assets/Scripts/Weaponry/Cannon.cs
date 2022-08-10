@@ -12,17 +12,19 @@ public class Cannon : MonoBehaviour
     public bool isshoot = false;
 
     void OnTriggerStay2D(Collider2D other){
-
-        if(!lockfire && other.GetComponent<Enemy>() && other == other.GetComponent<Enemy>().body) //other.CompareTag("Enemy") && 
+        if (other.CompareTag("Enemy"))
         {
-            target = other.gameObject.transform;
-            lockfire = true;
-            curenemy = other.gameObject;
-        }
-        if (lockfire && curenemy)
-        {
-            transform.up = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y); //УРРАА, она вращается!))
-            if (!isshoot) StartCoroutine(Fire());
+            if (!lockfire && other == other.GetComponent<Enemy>().body) //other.CompareTag("Enemy") && && other.GetComponent<Enemy>() 
+            {
+                target = other.gameObject.transform;
+                lockfire = true;
+                curenemy = other.gameObject;
+            }
+            if (lockfire && curenemy)
+            {
+                transform.up = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y); //УРРАА, она вращается!))
+                if (!isshoot) StartCoroutine(Fire());
+            }
         }
     }
     void OnTriggerExit2D(Collider2D other){
