@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 2000
-  dmg: 50
+  dmg: 100
   attackspeed: 4
   activStazis: 0
   bleeding: 0

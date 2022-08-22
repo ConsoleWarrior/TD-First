@@ -19,17 +19,22 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-   void Update()
-   {
-      if (hp <= 0) { Destroy(this.gameObject); Main.kredit += 1; }
-      if (bleeding) anim.SetBool("Bleeding", true);
-      if (!bleeding) anim.SetBool("Bleeding", false);
-      if (burning) {
-            if(!anim.GetBool("Burning")) anim.SetBool("Burning", true); 
-            hp = hp-Time.deltaTime*30; 
-      }
-      if(anim.GetBool("Burning")) hp = hp - Time.deltaTime * 10;
-        if (!burning && anim.GetBool("Burning"))  Invoke("StopBurn", 5); 
+
+    public virtual void Update()
+    {
+        if (hp <= 0) { Destroy(this.gameObject); Main.kredit += 1; }
+        BurnCheck();
+    }
+
+    public void BurnCheck()
+    {
+        if (burning)
+        {
+            if (!anim.GetBool("Burning")) anim.SetBool("Burning", true);
+            hp = hp - Time.deltaTime * 30;
+        }
+        if (anim.GetBool("Burning")) hp = hp - Time.deltaTime * 10;
+        if (!burning && anim.GetBool("Burning")) Invoke("StopBurn", 5);
     }
     void StopBurn()
     {

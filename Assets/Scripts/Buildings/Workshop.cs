@@ -6,6 +6,6 @@ public class Workshop : MonoBehaviour
 {
     void Awake()
     {
-        Destructible.repair += 2;
+        Destructible.repair += 1.5f;
     }
 }

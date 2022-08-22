@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a327709e58d96294cbdac2550f1f2864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
+  hp: 75
   dmg: 0
   attackspeed: 2
   activStazis: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   curenemy: {fileID: 0}
   lockfire: 0
   bullet: {fileID: 7367402928617916326, guid: 8539cc81645205249b9f5b67ff9cadee, type: 3}
-  targ: {fileID: 0}
+  curetarget: {fileID: 0}
   isshoot: 0
 --- !u!195 &-419862187206294713
 NavMeshAgent:

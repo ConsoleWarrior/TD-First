@@ -19,7 +19,7 @@ public class Agent : MonoBehaviour
     void Update()
     {
         agent.SetDestination(target.position);
-        if(target.gameObject.CompareTag("Ship"))
+        if(target.gameObject.name == "Ship")
         transform.up = agent.velocity.normalized; //ОНО СМОТРИТ КУДА НАДО!!!
 
         //transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.Euler (0, 0, 90), 5 * Time.deltaTime);//плавный поворот!!!

@@ -14,7 +14,7 @@ public class Boom : MonoBehaviour
     {
         Enemy c = other.gameObject.GetComponent<Enemy>();
         if (c == null) return;
-        if (other = c.body)
+        if (other == c.body)
         c.hp -= dmg;
         
     }

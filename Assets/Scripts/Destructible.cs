@@ -27,6 +27,7 @@ public class Destructible : MonoBehaviour
         {
             if (hp < maxhp) hp += repair;
             yield return new WaitForSeconds(1);
+            //Debug.Log(this.gameObject.name);
         }
     }
 }

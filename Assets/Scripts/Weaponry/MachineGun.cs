@@ -36,7 +36,7 @@ public class MachineGun : MonoBehaviour
         {
             lockfire = false;
             StopCoroutine(Fire());
-            curenemy.bleeding = false;
+            curenemy.anim.SetBool("Bleeding", false);
             fire.SetBool("Fire", false);
             //curenemy = null;
         }
@@ -50,7 +50,7 @@ public class MachineGun : MonoBehaviour
             //transform.up = new Vector2(target.position.x-transform.position.x,target.position.y-transform.position.y); //УРРАА, она вращается!))
             if(!isshoot){
                 StartCoroutine(Fire());
-                curenemy.bleeding = true;
+                curenemy.anim.SetBool("Bleeding", true);
             }
 
         }

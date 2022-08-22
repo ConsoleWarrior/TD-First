@@ -139,8 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
-  dmg: 10
-  attackspeed: 3
+  dmg: 4
+  attackspeed: 1
   activStazis: 0
   bleeding: 0
   burning: 0

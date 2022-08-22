@@ -16665,9 +16665,9 @@ GameObject:
   - component: {fileID: 1223948899}
   - component: {fileID: 1223948904}
   - component: {fileID: 1223948903}
-  - component: {fileID: 1223948902}
   - component: {fileID: 1223948901}
   - component: {fileID: 1223948906}
+  - component: {fileID: 1223948907}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -16738,18 +16738,6 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
---- !u!114 &1223948902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223948898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8177019a0967d5447861cc0df9b9f1f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1223948903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16762,11 +16750,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc74106ff632be4b9913795e27ce3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
   bitcoin: {fileID: 316885004}
   timerr: {fileID: 1824091875}
   youwin: {fileID: 1772765852}
   gameover: {fileID: 1611204557}
+  ship: {fileID: 0}
 --- !u!81 &1223948904
 AudioListener:
   m_ObjectHideFlags: 0
@@ -16805,6 +16793,19 @@ MonoBehaviour:
   prefab: {fileID: 3226579936910753478, guid: 45c8f82a29bce554ebe98ceeb2376f75, type: 3}
   field: {fileID: 1756397223}
   surfaces: {fileID: 2132656743}
+--- !u!114 &1223948907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223948898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56048c889eddbe0458b4cd511f23f3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 5
 --- !u!1001 &1229971634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27313,7 +27314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4258512157487003823, guid: 9d2d04c392926a64d9233fa917f1c25c, type: 3}
       propertyPath: m_TagString
-      value: Ship
+      value: Destructible
       objectReference: {fileID: 0}
     - target: {fileID: 7049280882503602366, guid: 9d2d04c392926a64d9233fa917f1c25c, type: 3}
       propertyPath: bar

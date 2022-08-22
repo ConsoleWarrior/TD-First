@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public Transform target;
-    public float dmg;
+    public static float dmg = 25;
 
     void Update(){
         if(target)

@@ -10,7 +10,7 @@ public class Gaubica : Cannon
 
         GameObject b = GameObject.Instantiate(bullet, transform.position, Quaternion.identity);
         b.GetComponent<Projectile>().target = target;
-        yield return new WaitForSeconds(firespeed);
+        yield return new WaitForSeconds(firespeed*10);
         isshoot = false;
     }
 }
