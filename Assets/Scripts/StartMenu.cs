@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
 {
-    public static int point = 10;
+    public static int point = 2;
     [SerializeField] Text points;
     //private int sceneNumber = 0;
     
@@ -37,5 +37,9 @@ public class StartMenu : MonoBehaviour
             point -= 1;
             points.text = point.ToString();
         }
+    }
+    public void Exitgame()
+    {
+        Application.Quit();
     }
 }
